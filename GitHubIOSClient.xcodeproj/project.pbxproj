@@ -14,7 +14,9 @@
 		52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D921E784A17000D1506 /* LaunchScreen.storyboard */; };
 		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
 		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
-		52D63D891E78C01600BAB343 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D881E78C01600BAB343 /* UserModel.m */; };
+		529CAC101E7973C300ECCB88 /* UsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC0F1E7973C300ECCB88 /* UsersModel.m */; };
+		529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC121E79748100ECCB88 /* UserInformationModel.m */; };
+		529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC151E797A8900ECCB88 /* RepositoryModel.m */; };
 		52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D8B1E78C15B00BAB343 /* RequestsManager.m */; };
 		52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */; };
 		52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */; };
@@ -34,8 +36,12 @@
 		52008D951E784A17000D1506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
-		52D63D871E78C01600BAB343 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
-		52D63D881E78C01600BAB343 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		529CAC0E1E7973C300ECCB88 /* UsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersModel.h; sourceTree = "<group>"; };
+		529CAC0F1E7973C300ECCB88 /* UsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersModel.m; sourceTree = "<group>"; };
+		529CAC111E79748100ECCB88 /* UserInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationModel.h; sourceTree = "<group>"; };
+		529CAC121E79748100ECCB88 /* UserInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationModel.m; sourceTree = "<group>"; };
+		529CAC141E797A8900ECCB88 /* RepositoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryModel.h; sourceTree = "<group>"; };
+		529CAC151E797A8900ECCB88 /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
 		52D63D8A1E78C15B00BAB343 /* RequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsManager.h; sourceTree = "<group>"; };
 		52D63D8B1E78C15B00BAB343 /* RequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsManager.m; sourceTree = "<group>"; };
 		52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListTableViewController.h; sourceTree = "<group>"; };
@@ -96,10 +102,14 @@
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
+				529CAC0E1E7973C300ECCB88 /* UsersModel.h */,
+				529CAC0F1E7973C300ECCB88 /* UsersModel.m */,
+				529CAC111E79748100ECCB88 /* UserInformationModel.h */,
+				529CAC121E79748100ECCB88 /* UserInformationModel.m */,
+				529CAC141E797A8900ECCB88 /* RepositoryModel.h */,
+				529CAC151E797A8900ECCB88 /* RepositoryModel.m */,
 				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
 				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
-				52D63D871E78C01600BAB343 /* UserModel.h */,
-				52D63D881E78C01600BAB343 /* UserModel.m */,
 				52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */,
 				52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */,
 				52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */,
@@ -253,8 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52008D891E784A16000D1506 /* AppDelegate.m in Sources */,
+				529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */,
 				52F12F061E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m in Sources */,
-				52D63D891E78C01600BAB343 /* UserModel.m in Sources */,
+				529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */,
+				529CAC101E7973C300ECCB88 /* UsersModel.m in Sources */,
 				52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */,
 				52008D861E784A16000D1506 /* main.m in Sources */,
 				52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */,
