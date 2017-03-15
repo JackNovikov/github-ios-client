@@ -9,23 +9,43 @@
 /* Begin PBXBuildFile section */
 		52008D861E784A16000D1506 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52008D851E784A16000D1506 /* main.m */; };
 		52008D891E784A16000D1506 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52008D881E784A16000D1506 /* AppDelegate.m */; };
-		52008D8C1E784A16000D1506 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52008D8B1E784A16000D1506 /* ViewController.m */; };
 		52008D8F1E784A16000D1506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D8D1E784A16000D1506 /* Main.storyboard */; };
 		52008D911E784A17000D1506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52008D901E784A16000D1506 /* Assets.xcassets */; };
 		52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D921E784A17000D1506 /* LaunchScreen.storyboard */; };
+		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
+		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
+		52D63D891E78C01600BAB343 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D881E78C01600BAB343 /* UserModel.m */; };
+		52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D8B1E78C15B00BAB343 /* RequestsManager.m */; };
+		52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */; };
+		52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */; };
+		52F12F061E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */; };
+		6C1760F50F5FDC977524FF43 /* libPods-GitHubIOSClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B282D8A0E8B0D0075D01276 /* Pods-GitHubIOSClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubIOSClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubIOSClient/Pods-GitHubIOSClient.release.xcconfig"; sourceTree = "<group>"; };
 		52008D811E784A16000D1506 /* GitHubIOSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubIOSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52008D851E784A16000D1506 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52008D871E784A16000D1506 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		52008D881E784A16000D1506 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		52008D8A1E784A16000D1506 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		52008D8B1E784A16000D1506 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		52008D8E1E784A16000D1506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52008D901E784A16000D1506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52008D931E784A17000D1506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52008D951E784A17000D1506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
+		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
+		52D63D871E78C01600BAB343 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		52D63D881E78C01600BAB343 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		52D63D8A1E78C15B00BAB343 /* RequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsManager.h; sourceTree = "<group>"; };
+		52D63D8B1E78C15B00BAB343 /* RequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsManager.m; sourceTree = "<group>"; };
+		52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListTableViewController.h; sourceTree = "<group>"; };
+		52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListTableViewController.m; sourceTree = "<group>"; };
+		52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
+		52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
+		52F12F041E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepositoriesTableViewController.h; sourceTree = "<group>"; };
+		52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoriesTableViewController.m; sourceTree = "<group>"; };
+		7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubIOSClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F192915BE6FE2C50E21C4942 /* Pods-GitHubIOSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubIOSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubIOSClient/Pods-GitHubIOSClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +53,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */,
+				52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */,
+				6C1760F50F5FDC977524FF43 /* libPods-GitHubIOSClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E603A588B3D8A7A04031138 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52518ACD1E78BECC00E8264D /* libMantle.a */,
+				52518ACB1E78BEC700E8264D /* libAFNetworking.a */,
+				7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52008D781E784A16000D1506 = {
 			isa = PBXGroup;
 			children = (
 				52008D831E784A16000D1506 /* GitHubIOSClient */,
 				52008D821E784A16000D1506 /* Products */,
+				C68B844040269C8D7051FCBC /* Pods */,
+				4E603A588B3D8A7A04031138 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,9 +95,17 @@
 			children = (
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
-				52008D8A1E784A16000D1506 /* ViewController.h */,
-				52008D8B1E784A16000D1506 /* ViewController.m */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
+				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
+				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
+				52D63D871E78C01600BAB343 /* UserModel.h */,
+				52D63D881E78C01600BAB343 /* UserModel.m */,
+				52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */,
+				52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */,
+				52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */,
+				52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */,
+				52F12F041E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.h */,
+				52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
 				52008D951E784A17000D1506 /* Info.plist */,
@@ -79,6 +122,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C68B844040269C8D7051FCBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F192915BE6FE2C50E21C4942 /* Pods-GitHubIOSClient.debug.xcconfig */,
+				1B282D8A0E8B0D0075D01276 /* Pods-GitHubIOSClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52008D981E784A17000D1506 /* Build configuration list for PBXNativeTarget "GitHubIOSClient" */;
 			buildPhases = (
+				C316F9B941FC0F277BDDC2EF /* [CP] Check Pods Manifest.lock */,
 				52008D7D1E784A16000D1506 /* Sources */,
 				52008D7E1E784A16000D1506 /* Frameworks */,
 				52008D7F1E784A16000D1506 /* Resources */,
+				20E6E88CAE0B2296D0C8835D /* [CP] Embed Pods Frameworks */,
+				6537C3D8A854C5904C28A7D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,14 +199,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20E6E88CAE0B2296D0C8835D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHubIOSClient/Pods-GitHubIOSClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6537C3D8A854C5904C28A7D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHubIOSClient/Pods-GitHubIOSClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C316F9B941FC0F277BDDC2EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52008D7D1E784A16000D1506 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52008D8C1E784A16000D1506 /* ViewController.m in Sources */,
 				52008D891E784A16000D1506 /* AppDelegate.m in Sources */,
+				52F12F061E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m in Sources */,
+				52D63D891E78C01600BAB343 /* UserModel.m in Sources */,
+				52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */,
 				52008D861E784A16000D1506 /* main.m in Sources */,
+				52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */,
+				52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,10 +366,16 @@
 		};
 		52008D991E784A17000D1506 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F192915BE6FE2C50E21C4942 /* Pods-GitHubIOSClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubIOSClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -270,10 +383,16 @@
 		};
 		52008D9A1E784A17000D1506 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B282D8A0E8B0D0075D01276 /* Pods-GitHubIOSClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubIOSClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -298,6 +417,7 @@
 				52008D9A1E784A17000D1506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
