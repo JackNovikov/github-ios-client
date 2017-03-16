@@ -18,6 +18,7 @@
 		5293D9CD1E7A980E0030285A /* UserRepositoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5293D9CC1E7A980E0030285A /* UserRepositoriesTableViewCell.m */; };
 		529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC121E79748100ECCB88 /* UserInformationModel.m */; };
 		529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC151E797A8900ECCB88 /* RepositoryModel.m */; };
+		52D115021E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D115011E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a */; };
 		52D4E2031E79B0D1006CA04E /* UserRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */; };
 		52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2051E79B143006CA04E /* UsersListViewController.m */; };
 		52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */; };
@@ -46,6 +47,7 @@
 		529CAC121E79748100ECCB88 /* UserInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationModel.m; sourceTree = "<group>"; };
 		529CAC141E797A8900ECCB88 /* RepositoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryModel.h; sourceTree = "<group>"; };
 		529CAC151E797A8900ECCB88 /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
+		52D115011E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUIScrollView-InfiniteScroll.a"; path = "Pods/../build/Debug-iphoneos/UIScrollView-InfiniteScroll/libUIScrollView-InfiniteScroll.a"; sourceTree = "<group>"; };
 		52D4E2011E79B0D1006CA04E /* UserRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepositoriesViewController.h; sourceTree = "<group>"; };
 		52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoriesViewController.m; sourceTree = "<group>"; };
 		52D4E2041E79B143006CA04E /* UsersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListViewController.h; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D115021E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a in Frameworks */,
 				5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */,
 				52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */,
 				52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */,
@@ -80,6 +83,7 @@
 		4E603A588B3D8A7A04031138 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52D115011E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a */,
 				5291E1B01E79D69E00C48365 /* libSDWebImage.a */,
 				52518ACD1E78BECC00E8264D /* libMantle.a */,
 				52518ACB1E78BEC700E8264D /* libAFNetworking.a */,
@@ -404,6 +408,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/UIScrollView-InfiniteScroll",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +427,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/UIScrollView-InfiniteScroll",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,6 +12,7 @@
 #import "UserCellModel.h"
 #import "UserInformationViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <UIScrollView-InfiniteScroll/UIScrollView+InfiniteScroll.h>
 
 @interface UsersListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -28,6 +29,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // pagination scroll
+    [self.tableView addInfiniteScrollWithHandler:^(UITableView * _Nonnull tableView) {
+        [self requestUsersList];
+        [tableView finishInfiniteScroll];
+    }];
+    
+    // pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
@@ -36,6 +44,7 @@
     [self requestUsersList];
 }
 
+// pull to refresh
 - (void) refreshTable {
     [self.users removeAllObjects];
     [self requestUsersList];
@@ -47,12 +56,16 @@
 }
 
 - (void)requestUsersList {
-    //NSLog(@"start: %lu", (unsigned long)self.users.count);
+    NSLog(@"start: %lu", (unsigned long)self.users.count);
     RequestsManager *manager = [RequestsManager sharedRequestManager];
-    [manager getUsersListSinceNumber:[self.users count] completionBlock:^(NSMutableArray *newUsers) {
+    NSInteger lastUser = 0;
+    if ([self.users count]) {
+        lastUser = [[[self.users lastObject] userID] integerValue];
+    }
+    [manager getUsersListSinceNumber:lastUser completionBlock:^(NSMutableArray *newUsers) {
         [self.users addObjectsFromArray:newUsers];
         [self.tableView reloadData];
-        //NSLog(@"end: %lu", (unsigned long)self.users.count);
+        NSLog(@"end: %lu", (unsigned long)self.users.count);
     }];
 }
 

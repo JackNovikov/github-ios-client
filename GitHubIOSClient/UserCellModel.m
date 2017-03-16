@@ -12,9 +12,10 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
+             @"userID": @"id",
              @"login": @"login",
              @"avatarURL": @"avatar_url",
-             @"userURL": @"url"
+             @"userURL": @"url"             
              };
 }
 

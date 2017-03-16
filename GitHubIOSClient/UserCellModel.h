@@ -14,5 +14,6 @@
 @property (copy, nonatomic) NSString *login;
 @property (copy, nonatomic) NSString *avatarURL;
 @property (copy, nonatomic) NSString *userURL;
+@property (copy, nonatomic) NSNumber *userID;
 
 @end
