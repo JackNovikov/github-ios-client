@@ -53,6 +53,7 @@
 // returns in compeletion block NSMutableArray with RepositoryModel
 - (void)getUserRepositoriesList:(NSString *)reposURL completionBlock:(void (^)(NSMutableArray *))completionBlock {
     NSURL *url = [NSURL URLWithString:reposURL];
+    NSLog(@"gor url - %@", reposURL);
     NSMutableArray *repositoriesList = [[NSMutableArray alloc] init];
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {

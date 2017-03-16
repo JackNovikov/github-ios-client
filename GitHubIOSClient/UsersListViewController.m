@@ -28,9 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"GitHub users"];
     
     // pagination scroll
-    [self.tableView addInfiniteScrollWithHandler:^(UITableView * _Nonnull tableView) {
+    [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
         [self requestUsersList];
         [tableView finishInfiniteScroll];
     }];

@@ -26,8 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.
-    
     self.userModel = [[UserInformationModel alloc] init];
     [self requestUserInformation];
 }
@@ -47,7 +45,13 @@
 - (void)displayUserInformation {
     [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:self.userModel.avatarURL]];
     self.userInformation.text = [NSString stringWithFormat:@"login: %@\nname: %@\ncompany: %@\nlocation: %@\npublic repositories: %@\nfollowers: %@", self.userModel.login, self.userModel.name, self.userModel.company, self.userModel.location, self.userModel.publicRepos, self.userModel.followers];
-    [self.userRepositories setTitle:[NSString stringWithFormat:@"%@ repositories", self.userModel.login] forState:UIControlStateNormal];
+    [self.userRepositories setTitle:[NSString stringWithFormat:@" %@ repositories ", self.userModel.login] forState:UIControlStateNormal];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ToUserRepositories"]) {
+        [(UserRepositoriesViewController *)segue.destinationViewController setRepositoriesURL:self.userModel.repositoriesURL];
+    }
 }
 
 @end

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UserRepositoriesTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *repositoryName;
-@property (weak, nonatomic) IBOutlet UITextView *repositoryInformation;
+@property (weak, nonatomic) IBOutlet UITextView *repositoryDescription;
 
 @end

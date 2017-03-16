@@ -13,13 +13,13 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"avatarURL": @"avatar_url",
-             @"company": @"company"/*,
+             @"company": @"company",
              @"followers": @"followers",
              @"location": @"location",
              @"login": @"login",
+             @"repositoriesURL": @"repos_url",
              @"name": @"name",
-             @"publicRepos": @"public_repos",
-                                    @"repositoriesURL": @"repos_url"*/
+             @"publicRepos": @"public_repos"
              };
 }
 

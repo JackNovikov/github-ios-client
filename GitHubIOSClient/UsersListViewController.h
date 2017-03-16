@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UsersListViewController : UIViewController
+@interface UsersListViewController : UIViewController <UISearchBarDelegate>
 
 @end
