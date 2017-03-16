@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *users;
 @property (copy, nonatomic) NSString *tappedUserURL;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -26,8 +28,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
+    
     self.users = [[NSMutableArray alloc] init];
     [self requestUsersList];
+}
+
+- (void) refreshTable {
+    [self.users removeAllObjects];
+    [self requestUsersList];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,12 +47,12 @@
 }
 
 - (void)requestUsersList {
+    //NSLog(@"start: %lu", (unsigned long)self.users.count);
     RequestsManager *manager = [RequestsManager sharedRequestManager];
     [manager getUsersListSinceNumber:[self.users count] completionBlock:^(NSMutableArray *newUsers) {
         [self.users addObjectsFromArray:newUsers];
-        //NSLog(@"**********************%@", self.users);
-        //NSLog(@"++++++++++++++++++++++%@", newUsers);
         [self.tableView reloadData];
+        //NSLog(@"end: %lu", (unsigned long)self.users.count);
     }];
 }
 

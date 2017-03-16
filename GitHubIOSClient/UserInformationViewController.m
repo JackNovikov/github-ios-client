@@ -10,6 +10,7 @@
 #import "RequestsManager.h"
 #import "UserInformationModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UserRepositoriesViewController.h"
 
 @interface UserInformationViewController ()
 
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.
     
     self.userModel = [[UserInformationModel alloc] init];
     [self requestUserInformation];

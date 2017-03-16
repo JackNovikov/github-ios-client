@@ -12,7 +12,7 @@
 @interface RepositoryModel : MTLModel <MTLJSONSerializing>
 
 @property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *fullName;
-#warning add other properties
+@property (copy, nonatomic) NSString *repositoryDescription;
+@property (copy, nonatomic) NSString *language;
 
 @end

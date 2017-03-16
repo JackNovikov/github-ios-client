@@ -18,5 +18,6 @@
 @property (copy, nonatomic) NSString *location;
 @property (copy, nonatomic) NSString *publicRepos;
 @property (copy, nonatomic) NSString *followers;
+@property (copy, nonatomic) NSString *repositoriesURL;
 
 @end

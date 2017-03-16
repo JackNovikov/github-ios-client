@@ -10,4 +10,6 @@
 
 @interface UserRepositoriesViewController : UIViewController
 
+@property (copy, nonatomic) NSString *repositoriesURL;
+
 @end

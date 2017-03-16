@@ -18,7 +18,8 @@
              @"location": @"location",
              @"login": @"login",
              @"name": @"name",
-             @"publicRepos": @"public_repos"*/
+             @"publicRepos": @"public_repos",
+                                    @"repositoriesURL": @"repos_url"*/
              };
 }
 
