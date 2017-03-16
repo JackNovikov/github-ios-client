@@ -20,16 +20,16 @@
     return _sharedRequestManager;
 }
 
-// returns in compeletion block NSMutableArray with UsersModel
-- (void)getUsersListSinceNumber:(int)number completionBlock:(void (^)(NSMutableArray *))completionBlock {
-    NSString *requestURL = [NSString stringWithFormat:@"https://api.github.com/users?since=%i", number];
+// returns in compeletion block NSMutableArray with UserCellModel
+- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSMutableArray *))completionBlock {
+    NSString *requestURL = [NSString stringWithFormat:@"https://api.github.com/users?since=%tu", number];
     NSURL *url = [NSURL URLWithString:requestURL];
     NSMutableArray *usersList = [[NSMutableArray alloc] init];
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *users = responseObject;
         for (NSDictionary *tempUser in users) {
-            UsersModel *user = [MTLJSONAdapter modelOfClass:[UsersModel class] fromJSONDictionary:tempUser error:nil];
+            UserCellModel *user = [MTLJSONAdapter modelOfClass:[UserCellModel class] fromJSONDictionary:tempUser error:nil];
             [usersList addObject:user];
         }
         completionBlock(usersList);
@@ -39,9 +39,8 @@
 }
 
 // returns in compeletion block UserInformationModel by the user id
-- (void)getUserInformation:(NSString *)userId completionBlock:(void (^)(UserInformationModel *))completionBlock {
-    NSString *requestURL = [NSString stringWithFormat:@"https://api.github.com/users/%@", userId];
-    NSURL *url = [NSURL URLWithString:requestURL];
+- (void)getUserInformation:(NSString *)userURL completionBlock:(void (^)(UserInformationModel *))completionBlock {
+    NSURL *url = [NSURL URLWithString:userURL];
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         UserInformationModel *user = [MTLJSONAdapter modelOfClass:[UserInformationModel class] fromJSONDictionary:responseObject error:nil];

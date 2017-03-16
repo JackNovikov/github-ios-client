@@ -7,8 +7,16 @@
 //
 
 #import "UserInformationViewController.h"
+#import "RequestsManager.h"
+#import "UserInformationModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface UserInformationViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *userAvatar;
+@property (weak, nonatomic) IBOutlet UITextView *userInformation;
+@property (weak, nonatomic) IBOutlet UIButton *userRepositories;
+@property (strong, nonatomic) UserInformationModel *userModel;
 
 @end
 
@@ -16,22 +24,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.userModel = [[UserInformationModel alloc] init];
+    [self requestUserInformation];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)requestUserInformation {
+    RequestsManager *manager = [RequestsManager sharedRequestManager];
+    [manager getUserInformation:self.userURL completionBlock:^(UserInformationModel *model) {
+        self.userModel = model;
+        [self displayUserInformation];
+    }];
 }
-*/
+
+- (void)displayUserInformation {
+    [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:self.userModel.avatarURL]];
+    self.userInformation.text = [NSString stringWithFormat:@"login: %@\nname: %@\ncompany: %@\nlocation: %@\npublic repositories: %@\nfollowers: %@", self.userModel.login, self.userModel.name, self.userModel.company, self.userModel.location, self.userModel.publicRepos, self.userModel.followers];
+    [self.userRepositories setTitle:[NSString stringWithFormat:@"%@ repositories", self.userModel.login] forState:UIControlStateNormal];
+}
 
 @end

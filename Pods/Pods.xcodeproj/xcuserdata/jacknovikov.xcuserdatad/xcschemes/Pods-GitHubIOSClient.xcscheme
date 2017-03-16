@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CAA81E3F445848B6393D47019E3F831E'
+               BlueprintIdentifier = 'EB9620B755D1B68D5CD6515804B0C55E'
                BlueprintName = 'Pods-GitHubIOSClient'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-GitHubIOSClient.a'>

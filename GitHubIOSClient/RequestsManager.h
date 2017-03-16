@@ -7,14 +7,14 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
-#import "UsersModel.h"
+#import "UserCellModel.h"
 #import "UserInformationModel.h"
 #import "RepositoryModel.h"
 
 @interface RequestsManager : AFHTTPSessionManager
 
 + (RequestsManager *)sharedRequestManager;
-- (void)getUsersListSinceNumber:(int)number completionBlock:(void (^)(NSMutableArray *))completionBlock;
+- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSMutableArray *))completionBlock;
 - (void)getUserInformation:(NSString *)userId completionBlock:(void (^)(UserInformationModel *))completionBlock;
 - (void)getUserRepositoriesList:(NSString *)reposURL completionBlock:(void (^)(NSMutableArray *))completionBlock;
 

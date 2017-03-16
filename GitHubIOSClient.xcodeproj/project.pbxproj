@@ -14,13 +14,15 @@
 		52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D921E784A17000D1506 /* LaunchScreen.storyboard */; };
 		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
 		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
-		529CAC101E7973C300ECCB88 /* UsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC0F1E7973C300ECCB88 /* UsersModel.m */; };
+		5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5291E1B01E79D69E00C48365 /* libSDWebImage.a */; };
 		529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC121E79748100ECCB88 /* UserInformationModel.m */; };
 		529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC151E797A8900ECCB88 /* RepositoryModel.m */; };
+		52D4E2031E79B0D1006CA04E /* UserRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */; };
+		52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2051E79B143006CA04E /* UsersListViewController.m */; };
+		52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */; };
 		52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D8B1E78C15B00BAB343 /* RequestsManager.m */; };
-		52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */; };
 		52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */; };
-		52F12F061E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */; };
+		52F9F2441E79FA5E0049B526 /* UserCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F9F2431E79FA5E0049B526 /* UserCellModel.m */; };
 		6C1760F50F5FDC977524FF43 /* libPods-GitHubIOSClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */; };
 /* End PBXBuildFile section */
 
@@ -36,20 +38,23 @@
 		52008D951E784A17000D1506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
-		529CAC0E1E7973C300ECCB88 /* UsersModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersModel.h; sourceTree = "<group>"; };
-		529CAC0F1E7973C300ECCB88 /* UsersModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersModel.m; sourceTree = "<group>"; };
+		5291E1B01E79D69E00C48365 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
 		529CAC111E79748100ECCB88 /* UserInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationModel.h; sourceTree = "<group>"; };
 		529CAC121E79748100ECCB88 /* UserInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationModel.m; sourceTree = "<group>"; };
 		529CAC141E797A8900ECCB88 /* RepositoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryModel.h; sourceTree = "<group>"; };
 		529CAC151E797A8900ECCB88 /* RepositoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryModel.m; sourceTree = "<group>"; };
+		52D4E2011E79B0D1006CA04E /* UserRepositoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepositoriesViewController.h; sourceTree = "<group>"; };
+		52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoriesViewController.m; sourceTree = "<group>"; };
+		52D4E2041E79B143006CA04E /* UsersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListViewController.h; sourceTree = "<group>"; };
+		52D4E2051E79B143006CA04E /* UsersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListViewController.m; sourceTree = "<group>"; };
+		52D4E2071E79B8C9006CA04E /* UsersListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListTableViewCell.h; sourceTree = "<group>"; };
+		52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListTableViewCell.m; sourceTree = "<group>"; };
 		52D63D8A1E78C15B00BAB343 /* RequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsManager.h; sourceTree = "<group>"; };
 		52D63D8B1E78C15B00BAB343 /* RequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsManager.m; sourceTree = "<group>"; };
-		52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListTableViewController.h; sourceTree = "<group>"; };
-		52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListTableViewController.m; sourceTree = "<group>"; };
 		52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
-		52F12F041E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepositoriesTableViewController.h; sourceTree = "<group>"; };
-		52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoriesTableViewController.m; sourceTree = "<group>"; };
+		52F9F2421E79FA5E0049B526 /* UserCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCellModel.h; sourceTree = "<group>"; };
+		52F9F2431E79FA5E0049B526 /* UserCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCellModel.m; sourceTree = "<group>"; };
 		7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubIOSClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F192915BE6FE2C50E21C4942 /* Pods-GitHubIOSClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubIOSClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubIOSClient/Pods-GitHubIOSClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */,
 				52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */,
 				52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */,
 				6C1760F50F5FDC977524FF43 /* libPods-GitHubIOSClient.a in Frameworks */,
@@ -71,6 +77,7 @@
 		4E603A588B3D8A7A04031138 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5291E1B01E79D69E00C48365 /* libSDWebImage.a */,
 				52518ACD1E78BECC00E8264D /* libMantle.a */,
 				52518ACB1E78BEC700E8264D /* libAFNetworking.a */,
 				7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */,
@@ -101,21 +108,23 @@
 			children = (
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
-				52008D8D1E784A16000D1506 /* Main.storyboard */,
-				529CAC0E1E7973C300ECCB88 /* UsersModel.h */,
-				529CAC0F1E7973C300ECCB88 /* UsersModel.m */,
+				52F9F2421E79FA5E0049B526 /* UserCellModel.h */,
+				52F9F2431E79FA5E0049B526 /* UserCellModel.m */,
 				529CAC111E79748100ECCB88 /* UserInformationModel.h */,
 				529CAC121E79748100ECCB88 /* UserInformationModel.m */,
 				529CAC141E797A8900ECCB88 /* RepositoryModel.h */,
 				529CAC151E797A8900ECCB88 /* RepositoryModel.m */,
 				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
 				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
-				52F12EFE1E78B7B500FDCBC1 /* UsersListTableViewController.h */,
-				52F12EFF1E78B7B500FDCBC1 /* UsersListTableViewController.m */,
+				52008D8D1E784A16000D1506 /* Main.storyboard */,
+				52D4E2041E79B143006CA04E /* UsersListViewController.h */,
+				52D4E2051E79B143006CA04E /* UsersListViewController.m */,
+				52D4E2071E79B8C9006CA04E /* UsersListTableViewCell.h */,
+				52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */,
 				52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */,
 				52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */,
-				52F12F041E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.h */,
-				52F12F051E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m */,
+				52D4E2011E79B0D1006CA04E /* UserRepositoriesViewController.h */,
+				52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
 				52008D951E784A17000D1506 /* Info.plist */,
@@ -264,13 +273,14 @@
 			files = (
 				52008D891E784A16000D1506 /* AppDelegate.m in Sources */,
 				529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */,
-				52F12F061E78BBBB00FDCBC1 /* UserRepositoriesTableViewController.m in Sources */,
+				52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */,
+				52D4E2031E79B0D1006CA04E /* UserRepositoriesViewController.m in Sources */,
 				529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */,
-				529CAC101E7973C300ECCB88 /* UsersModel.m in Sources */,
-				52F12F001E78B7B500FDCBC1 /* UsersListTableViewController.m in Sources */,
+				52F9F2441E79FA5E0049B526 /* UserCellModel.m in Sources */,
 				52008D861E784A16000D1506 /* main.m in Sources */,
 				52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */,
 				52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */,
+				52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +397,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +415,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";

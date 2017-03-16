@@ -13,6 +13,10 @@
 
 @property (copy, nonatomic) NSString *login;
 @property (copy, nonatomic) NSString *avatarURL;
-#warning add other properties
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *company;
+@property (copy, nonatomic) NSString *location;
+@property (copy, nonatomic) NSString *publicRepos;
+@property (copy, nonatomic) NSString *followers;
 
 @end

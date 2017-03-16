@@ -5,5 +5,6 @@ target 'GitHubIOSClient' do
 
   pod 'AFNetworking', '~> 3.0'
   pod 'Mantle'
+  pod 'SDWebImage', '~>3.8'
 
 end

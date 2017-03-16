@@ -10,4 +10,6 @@
 
 @interface UserInformationViewController : UIViewController
 
+@property (copy, nonatomic) NSString *userURL;
+
 @end
