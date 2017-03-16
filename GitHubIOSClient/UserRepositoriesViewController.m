@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *repositories;
+@property (assign, nonatomic) NSInteger page;
 
 @end
 
@@ -23,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.page = 1;
     
     // pagination scroll
     [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
@@ -32,7 +35,6 @@
     
     self.repositories = [[NSMutableArray alloc] init];
     [self requestRepositoriesList];
-    NSLog(@"%@", self.repositoriesURL);
 }
 
 
@@ -42,10 +44,11 @@
 
 - (void)requestRepositoriesList {
     RequestsManager *manager = [RequestsManager sharedRequestManager];
-    [manager getUserRepositoriesList:self.repositoriesURL completionBlock:^(NSMutableArray *newRepositories) {
+    NSString *url = [NSString stringWithFormat:@"%@?page=%ld&per_page=10", self.repositoriesURL, (long)self.page];
+    self.page++;
+    NSLog(@"url is --- %@", url);
+    [manager getUserRepositoriesList:url completionBlock:^(NSMutableArray *newRepositories) {
         [self.repositories addObjectsFromArray:newRepositories];
-        NSLog(@"NEW REPOS\n%@", newRepositories);
-        NSLog(@"REPOS %@", self.repositories);
         [self.tableView reloadData];
     }];
 }
