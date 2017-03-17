@@ -43,9 +43,10 @@
 }
 
 - (void)displayUserInformation {
+    [self.navigationItem setTitle:[NSString stringWithFormat:@"%@", self.userModel.login]];
     [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:self.userModel.avatarURL]];
-    self.userInformation.text = [NSString stringWithFormat:@"login: %@\nname: %@\ncompany: %@\nlocation: %@\npublic repositories: %@\nfollowers: %@", self.userModel.login, self.userModel.name, self.userModel.company, self.userModel.location, self.userModel.publicRepos, self.userModel.followers];
-    [self.userRepositories setTitle:[NSString stringWithFormat:@" %@ repositories ", self.userModel.login] forState:UIControlStateNormal];
+    self.userInformation.text = [NSString stringWithFormat:@"login: %@\nname: %@\ncompany: %@\nlocation: %@\npublic repositories: %@\nfollowers: %@", self.userModel.login, self.userModel.name, self.userModel.company ? self.userModel.company : @"no information", self.userModel.location, self.userModel.publicRepos, self.userModel.followers];
+    [self.userRepositories setTitle:[NSString stringWithFormat:@" %@'s repositories ", self.userModel.login] forState:UIControlStateNormal];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

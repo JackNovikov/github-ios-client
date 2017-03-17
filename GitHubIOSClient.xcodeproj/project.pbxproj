@@ -113,27 +113,12 @@
 		52008D831E784A16000D1506 /* GitHubIOSClient */ = {
 			isa = PBXGroup;
 			children = (
+				52A6D7F91E7B700C00DB6714 /* ViewControllers */,
+				52A6D7FC1E7B703F00DB6714 /* Models */,
+				52A6D7FB1E7B703400DB6714 /* Services */,
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
-				52F9F2421E79FA5E0049B526 /* UserCellModel.h */,
-				52F9F2431E79FA5E0049B526 /* UserCellModel.m */,
-				529CAC111E79748100ECCB88 /* UserInformationModel.h */,
-				529CAC121E79748100ECCB88 /* UserInformationModel.m */,
-				529CAC141E797A8900ECCB88 /* RepositoryModel.h */,
-				529CAC151E797A8900ECCB88 /* RepositoryModel.m */,
-				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
-				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
-				52D4E2041E79B143006CA04E /* UsersListViewController.h */,
-				52D4E2051E79B143006CA04E /* UsersListViewController.m */,
-				52D4E2071E79B8C9006CA04E /* UsersListTableViewCell.h */,
-				52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */,
-				52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */,
-				52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */,
-				52D4E2011E79B0D1006CA04E /* UserRepositoriesViewController.h */,
-				52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */,
-				5293D9CB1E7A980E0030285A /* UserRepositoriesTableViewCell.h */,
-				5293D9CC1E7A980E0030285A /* UserRepositoriesTableViewCell.m */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
 				52008D951E784A17000D1506 /* Info.plist */,
@@ -148,6 +133,45 @@
 				52008D851E784A16000D1506 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52A6D7F91E7B700C00DB6714 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52D4E2041E79B143006CA04E /* UsersListViewController.h */,
+				52D4E2051E79B143006CA04E /* UsersListViewController.m */,
+				52D4E2071E79B8C9006CA04E /* UsersListTableViewCell.h */,
+				52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */,
+				52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */,
+				52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */,
+				52D4E2011E79B0D1006CA04E /* UserRepositoriesViewController.h */,
+				52D4E2021E79B0D1006CA04E /* UserRepositoriesViewController.m */,
+				5293D9CB1E7A980E0030285A /* UserRepositoriesTableViewCell.h */,
+				5293D9CC1E7A980E0030285A /* UserRepositoriesTableViewCell.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52A6D7FB1E7B703400DB6714 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
+				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		52A6D7FC1E7B703F00DB6714 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52F9F2421E79FA5E0049B526 /* UserCellModel.h */,
+				52F9F2431E79FA5E0049B526 /* UserCellModel.m */,
+				529CAC111E79748100ECCB88 /* UserInformationModel.h */,
+				529CAC121E79748100ECCB88 /* UserInformationModel.m */,
+				529CAC141E797A8900ECCB88 /* RepositoryModel.h */,
+				529CAC151E797A8900ECCB88 /* RepositoryModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C68B844040269C8D7051FCBC /* Pods */ = {

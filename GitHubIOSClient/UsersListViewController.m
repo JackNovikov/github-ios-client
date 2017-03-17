@@ -14,13 +14,14 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <UIScrollView-InfiniteScroll/UIScrollView+InfiniteScroll.h>
 
-@interface UsersListViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface UsersListViewController () <UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *users;
-@property (copy, nonatomic) NSString *tappedUserURL;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) NSMutableArray *filteredUsers;
+@property (strong, nonatomic) NSArray *displayedUsers;
 
 @end
 
@@ -29,6 +30,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"GitHub users"];
+    self.users = [[NSMutableArray alloc] init];
+    
+    // search controller
+    self.filteredUsers = [[NSMutableArray alloc] init];
+    self.displayedUsers = self.users;
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.delegate = self;
+    
+    [self.searchController.searchBar sizeToFit];
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    //[self.tableView setContentOffset:CGPointMake(0, self.searchController.searchBar.frame.size.height)];
+    
     
     // pagination scroll
     [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
@@ -41,32 +58,51 @@
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    self.users = [[NSMutableArray alloc] init];
     [self requestUsersList];
+}
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)aSearchController {
+    NSLog(@"update Search Results For Search Controller");
+    
+    NSString *searchString = aSearchController.searchBar.text;
+    NSLog(@"searchString=%@", searchString);
+    
+    // Check if the user cancelled or deleted the search term so we can display the full list instead.
+    if (![searchString isEqualToString:@""]) {
+        [self.filteredUsers removeAllObjects];
+        for (UserCellModel *tempUser in self.users) {
+            NSString *str = tempUser.login;
+            if ([searchString isEqualToString:@""] || [str localizedCaseInsensitiveContainsString:searchString] == YES) {
+                //NSLog(@"str=%@", str);
+                [self.filteredUsers addObject:tempUser];
+            }
+        }
+        self.displayedUsers = self.filteredUsers;
+    }
+    else {
+        self.displayedUsers = self.users;
+    }
+    [self.tableView reloadData];
+    NSLog(@"data reloaded");
 }
 
 // pull to refresh
 - (void) refreshTable {
     [self.users removeAllObjects];
+    [self.tableView reloadData];
     [self requestUsersList];
-    [self.refreshControl endRefreshing];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 - (void)requestUsersList {
-    NSLog(@"start: %lu", (unsigned long)self.users.count);
     RequestsManager *manager = [RequestsManager sharedRequestManager];
     NSInteger lastUser = 0;
     if ([self.users count]) {
         lastUser = [[[self.users lastObject] userID] integerValue];
     }
-    [manager getUsersListSinceNumber:lastUser completionBlock:^(NSMutableArray *newUsers) {
+    [manager getUsersListSinceNumber:lastUser completionBlock:^(NSArray *newUsers) {
         [self.users addObjectsFromArray:newUsers];
         [self.tableView reloadData];
-        NSLog(@"end: %lu", (unsigned long)self.users.count);
+        [self.refreshControl endRefreshing];
     }];
 }
 
@@ -83,32 +119,18 @@
     
     UsersListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UserCellModel *user = [[UserCellModel alloc] init];
-    user = [self.users objectAtIndex:[indexPath row]];
+    UserCellModel *user = [self.users objectAtIndex:indexPath.row];
     [cell.avatarImage sd_setImageWithURL:[NSURL URLWithString:user.avatarURL]];
     cell.name.text = user.login;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    // fetch user
-    UserCellModel *user = [self.users objectAtIndex:[indexPath row]];
-    self.tappedUserURL = user.userURL;
-    
-    // perform segue
-    [self performSegueWithIdentifier:@"UsersListToUserInformation" sender:self];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.destinationViewController isKindOfClass:[UserInformationViewController class]]) {
+    if ([segue.identifier isEqualToString:@"UsersListToUserInformation"]) {
         
-        // configure UserInformationController
-        [(UserInformationViewController *)segue.destinationViewController setUserURL:self.tappedUserURL];
-        
-        [self setTappedUserURL:nil];
+        UserCellModel *user = [self.users objectAtIndex:[[self.tableView indexPathForCell:sender] row]];
+        [(UserInformationViewController *)segue.destinationViewController setUserURL:user.userURL];
     }
 }
 

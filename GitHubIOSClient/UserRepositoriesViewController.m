@@ -44,13 +44,12 @@
 
 - (void)requestRepositoriesList {
     RequestsManager *manager = [RequestsManager sharedRequestManager];
-    NSString *url = [NSString stringWithFormat:@"%@?page=%ld&per_page=10", self.repositoriesURL, (long)self.page];
-    self.page++;
-    NSLog(@"url is --- %@", url);
-    [manager getUserRepositoriesList:url completionBlock:^(NSMutableArray *newRepositories) {
+    
+    [manager getUserRepositoriesList:self.repositoriesURL forPage:self.page completionBlock:^(NSArray *newRepositories) {
         [self.repositories addObjectsFromArray:newRepositories];
         [self.tableView reloadData];
     }];
+    self.page++;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -66,10 +65,9 @@
     
     UserRepositoriesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    RepositoryModel *model = [[RepositoryModel alloc] init];
-    model = [self.repositories objectAtIndex:[indexPath row]];
+    RepositoryModel *model = [self.repositories objectAtIndex:indexPath.row];
     cell.repositoryName.text = model.name;
-    cell.repositoryDescription.text = [NSString stringWithFormat:@"language: %@\n%@", model.language, model.repositoryDescription];
+    cell.repositoryDescription.text = [NSString stringWithFormat:@"language: %@\n%@", model.language, model.repositoryDescription ? model.repositoryDescription : @"- no description -"];
     
     return cell;
 }

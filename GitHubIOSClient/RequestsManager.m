@@ -21,7 +21,7 @@
 }
 
 // returns in compeletion block NSMutableArray with UserCellModel
-- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSMutableArray *))completionBlock {
+- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSArray *))completionBlock {
     NSString *requestURL = [NSString stringWithFormat:@"https://api.github.com/users?since=%tu", number];
     NSURL *url = [NSURL URLWithString:requestURL];
     NSMutableArray *usersList = [[NSMutableArray alloc] init];
@@ -51,9 +51,9 @@
 }
 
 // returns in compeletion block NSMutableArray with RepositoryModel
-- (void)getUserRepositoriesList:(NSString *)reposURL completionBlock:(void (^)(NSMutableArray *))completionBlock {
-    NSURL *url = [NSURL URLWithString:reposURL];
-    NSLog(@"gor url - %@", reposURL);
+- (void)getUserRepositoriesList:(NSString *)reposURL forPage:(NSInteger)page completionBlock:(void (^)(NSArray *))completionBlock {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?page=%ld&per_page=10", reposURL, page]];
+
     NSMutableArray *repositoriesList = [[NSMutableArray alloc] init];
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {

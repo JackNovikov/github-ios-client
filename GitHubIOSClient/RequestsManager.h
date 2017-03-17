@@ -14,8 +14,8 @@
 @interface RequestsManager : AFHTTPSessionManager
 
 + (RequestsManager *)sharedRequestManager;
-- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSMutableArray *))completionBlock;
+- (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSArray *))completionBlock;
 - (void)getUserInformation:(NSString *)userId completionBlock:(void (^)(UserInformationModel *))completionBlock;
-- (void)getUserRepositoriesList:(NSString *)reposURL completionBlock:(void (^)(NSMutableArray *))completionBlock;
+- (void)getUserRepositoriesList:(NSString *)reposURL forPage:(NSInteger)page completionBlock:(void (^)(NSArray *))completionBlock;
 
 @end
