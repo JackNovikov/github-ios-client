@@ -38,8 +38,8 @@
     // pagination scroll
     [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
         [self requestUsersList];
-        [tableView finishInfiniteScroll];
     }];
+    
     
     // pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -53,7 +53,8 @@
     searchBar.showsCancelButton = YES;
     if (text.length == 0) {
         self.isFiltered = FALSE;
-        [searchBar resignFirstResponder];
+        searchBar.showsCancelButton = NO;
+        [self performSelector:@selector(hideKeyboardWithSearhButton:) withObject:searchBar afterDelay:0];
     } else {
         self.isFiltered = true;
         self.filteredUsers = [[NSMutableArray alloc] init];
@@ -68,8 +69,13 @@
     [self.tableView reloadData];
 }
 
+- (void)hideKeyboardWithSearhButton:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
+    searchBar.showsCancelButton = NO;
 }
 
 // pull to refresh
@@ -89,6 +95,7 @@
         [self.users addObjectsFromArray:newUsers];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+        [self.tableView finishInfiniteScroll];
     }];
 }
 

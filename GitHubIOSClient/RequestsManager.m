@@ -28,11 +28,15 @@
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *users = responseObject;
-        for (NSDictionary *tempUser in users) {
-            UserCellModel *user = [MTLJSONAdapter modelOfClass:[UserCellModel class] fromJSONDictionary:tempUser error:nil];
-            [usersList addObject:user];
-        }
-        completionBlock(usersList);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            for (NSDictionary *tempUser in users) {
+                UserCellModel *user = [MTLJSONAdapter modelOfClass:[UserCellModel class] fromJSONDictionary:tempUser error:nil];
+                [usersList addObject:user];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(usersList);
+            });
+        });
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -43,8 +47,12 @@
     NSURL *url = [NSURL URLWithString:userURL];
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        UserInformationModel *user = [MTLJSONAdapter modelOfClass:[UserInformationModel class] fromJSONDictionary:responseObject error:nil];
-        completionBlock(user);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UserInformationModel *user = [MTLJSONAdapter modelOfClass:[UserInformationModel class] fromJSONDictionary:responseObject error:nil];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(user);
+            });
+        });
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
     }];
@@ -58,11 +66,15 @@
     
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray *repositories = responseObject;
-        for (NSDictionary *tempRepository in repositories) {
-            RepositoryModel *repository = [MTLJSONAdapter modelOfClass:[RepositoryModel class] fromJSONDictionary:tempRepository error:nil];
-            [repositoriesList addObject:repository];
-        }
-        completionBlock(repositoriesList);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            for (NSDictionary *tempRepository in repositories) {
+                RepositoryModel *repository = [MTLJSONAdapter modelOfClass:[RepositoryModel class] fromJSONDictionary:tempRepository error:nil];
+                [repositoriesList addObject:repository];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(repositoriesList);
+            });
+        });
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
     }];

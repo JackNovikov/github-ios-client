@@ -30,7 +30,6 @@
     // pagination scroll
     [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
         [self requestRepositoriesList];
-        [tableView finishInfiniteScroll];
     }];
     
     self.repositories = [[NSMutableArray alloc] init];
@@ -48,6 +47,7 @@
     [manager getUserRepositoriesList:self.repositoriesURL forPage:self.page completionBlock:^(NSArray *newRepositories) {
         [self.repositories addObjectsFromArray:newRepositories];
         [self.tableView reloadData];
+        [self.tableView finishInfiniteScroll];
     }];
     self.page++;
 }
