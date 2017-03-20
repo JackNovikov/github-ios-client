@@ -24,6 +24,7 @@
 		52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */; };
 		52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D8B1E78C15B00BAB343 /* RequestsManager.m */; };
 		52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */; };
+		52F956FD1E7F5D5B00752F5C /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */; };
 		52F9F2441E79FA5E0049B526 /* UserCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F9F2431E79FA5E0049B526 /* UserCellModel.m */; };
 		6C1760F50F5FDC977524FF43 /* libPods-GitHubIOSClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,8 @@
 		52D63D8B1E78C15B00BAB343 /* RequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsManager.m; sourceTree = "<group>"; };
 		52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
+		52F956FB1E7F5D5A00752F5C /* AuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationViewController.h; sourceTree = "<group>"; };
+		52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizationViewController.m; sourceTree = "<group>"; };
 		52F9F2421E79FA5E0049B526 /* UserCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCellModel.h; sourceTree = "<group>"; };
 		52F9F2431E79FA5E0049B526 /* UserCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCellModel.m; sourceTree = "<group>"; };
 		7B523FA808E1516057200480 /* libPods-GitHubIOSClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitHubIOSClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +122,8 @@
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
+				52F956FB1E7F5D5A00752F5C /* AuthorizationViewController.h */,
+				52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
 				52008D951E784A17000D1506 /* Info.plist */,
@@ -312,6 +317,7 @@
 				529CAC161E797A8900ECCB88 /* RepositoryModel.m in Sources */,
 				52F9F2441E79FA5E0049B526 /* UserCellModel.m in Sources */,
 				52008D861E784A16000D1506 /* main.m in Sources */,
+				52F956FD1E7F5D5B00752F5C /* AuthorizationViewController.m in Sources */,
 				52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */,
 				52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */,
 				52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */,

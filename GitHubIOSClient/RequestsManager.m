@@ -80,4 +80,19 @@
     }];
 }
 
+// basic auth
+- (void)authUserWithLogin:(NSString *)login andPassword:(NSString *)password {
+    NSLog(@"login: %@, password: %@", login, password);
+    [self setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [self.requestSerializer setAuthorizationHeaderFieldWithUsername:login password:password];
+    self.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    NSURL *url = [NSURL URLWithString:@"https://api.github.com/user"];
+    [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"AUTHED");
+        NSLog(@"response: %@", responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"NOT AUTHED");
+    }];
+}
+
 @end
