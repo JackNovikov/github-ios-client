@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IIT-G0-2Lp">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IIT-G0-2Lp">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="DTI-aK-jrt">
@@ -223,8 +223,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cw9-hG-mSV">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cw9-hG-mSV">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -298,8 +298,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="login" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZI-UB-7FK">
-                                <rect key="frame" x="181" y="243" width="53" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Login" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZI-UB-7FK">
+                                <rect key="frame" x="50" y="243" width="314" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="XaU-si-lXz"/>
                                 </constraints>
@@ -326,11 +326,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="7Lc-Z7-Wjw" kind="show" identifier="SignInToMyProfile" id="8Gu-Ns-bHc"/>
+                                    <action selector="signInButtonClicked:" destination="fMa-FT-aKv" eventType="touchUpInside" id="6yP-mL-ygj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-qb-fFb">
-                                <rect key="frame" x="166" y="293" width="83" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-qb-fFb">
+                                <rect key="frame" x="50" y="293" width="314" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -345,14 +345,18 @@
                             <constraint firstItem="1Hc-w5-GXs" firstAttribute="top" secondItem="4Cb-qb-fFb" secondAttribute="bottom" constant="72" id="Gcg-ZQ-GgM"/>
                             <constraint firstItem="XZI-UB-7FK" firstAttribute="centerX" secondItem="1Hc-w5-GXs" secondAttribute="centerX" id="Glx-20-OH3"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="centerY" secondItem="I3B-X2-MGX" secondAttribute="centerY" id="JjN-aq-hC0"/>
+                            <constraint firstItem="4Cb-qb-fFb" firstAttribute="width" secondItem="XZI-UB-7FK" secondAttribute="width" id="JmO-75-Ji8"/>
                             <constraint firstItem="1Hc-w5-GXs" firstAttribute="top" secondItem="4Cb-qb-fFb" secondAttribute="bottom" constant="30" id="N8G-1p-qFZ"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="top" secondItem="XZI-UB-7FK" secondAttribute="bottom" constant="20" id="Vhv-rX-HpS"/>
                             <constraint firstItem="XZI-UB-7FK" firstAttribute="centerX" secondItem="I3B-X2-MGX" secondAttribute="centerX" id="W8J-VT-7GP"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="top" secondItem="XZI-UB-7FK" secondAttribute="bottom" constant="18" id="ZiJ-tf-E4m"/>
+                            <constraint firstItem="4Cb-qb-fFb" firstAttribute="height" secondItem="XZI-UB-7FK" secondAttribute="height" id="aAc-a6-EzG"/>
                             <constraint firstItem="1Hc-w5-GXs" firstAttribute="centerY" secondItem="I3B-X2-MGX" secondAttribute="centerY" id="d5J-00-ffB"/>
+                            <constraint firstItem="XZI-UB-7FK" firstAttribute="width" secondItem="I3B-X2-MGX" secondAttribute="width" constant="-100" id="jfS-9k-tJb"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="width" secondItem="XZI-UB-7FK" secondAttribute="width" id="mfC-Be-0iA"/>
                             <constraint firstItem="1Hc-w5-GXs" firstAttribute="centerX" secondItem="4Cb-qb-fFb" secondAttribute="centerX" id="qP9-vh-ELp"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="top" secondItem="XZI-UB-7FK" secondAttribute="bottom" constant="20" id="sSN-8t-T3k"/>
+                            <constraint firstItem="4Cb-qb-fFb" firstAttribute="width" secondItem="XZI-UB-7FK" secondAttribute="width" id="tRM-CL-Fle"/>
                             <constraint firstItem="XZI-UB-7FK" firstAttribute="trailing" secondItem="4Cb-qb-fFb" secondAttribute="trailing" id="twP-NW-wT4"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="centerX" secondItem="I3B-X2-MGX" secondAttribute="centerX" id="vvD-dq-Xdm"/>
                             <constraint firstItem="4Cb-qb-fFb" firstAttribute="centerX" secondItem="XZI-UB-7FK" secondAttribute="centerX" id="zx1-S9-nUM"/>
@@ -365,7 +369,9 @@
                                 <exclude reference="JjN-aq-hC0"/>
                                 <exclude reference="Vhv-rX-HpS"/>
                                 <exclude reference="ZiJ-tf-E4m"/>
+                                <exclude reference="aAc-a6-EzG"/>
                                 <exclude reference="mfC-Be-0iA"/>
+                                <exclude reference="tRM-CL-Fle"/>
                                 <exclude reference="zx1-S9-nUM"/>
                                 <exclude reference="Gcg-ZQ-GgM"/>
                                 <exclude reference="qP9-vh-ELp"/>
@@ -376,6 +382,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="XZI-UB-7FK" id="8VK-MR-n0s"/>
                         <outlet property="passwordTextField" destination="4Cb-qb-fFb" id="3t9-P2-8hh"/>
+                        <segue destination="7Lc-Z7-Wjw" kind="show" identifier="SignInToMyProfile" id="B3G-Af-y8y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukQ-4e-U1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,8 +420,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZo-GX-Rvb">
-                                <rect key="frame" x="184" y="649" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZo-GX-Rvb">
+                                <rect key="frame" x="192" y="649" width="30" height="30"/>
                                 <connections>
                                     <segue destination="3Ag-G6-o0X" kind="show" identifier="ToMyRepositories" id="0bj-gq-yoz"/>
                                 </connections>

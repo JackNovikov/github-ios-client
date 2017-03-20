@@ -47,29 +47,33 @@ static NSInteger OFFSET_FOR_KEYBOARD = 80.0;
     textField.placeholder = @"";
 }
 
-/*- (IBAction)signInButtonClicked:(id)sender {
+- (IBAction)signInButtonClicked:(id)sender {
     RequestsManager *manager = [RequestsManager sharedRequestManager];
-    [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text completionBlock:^(UserInformationModel *myModel) {
-        <#code#>
-    }];
-}*/
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"SignInToMyProfile"]) {
-        
-        RequestsManager *manager = [RequestsManager sharedRequestManager];
-        [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text completionBlock:^(UserInformationModel *myModel) {
-            //[(MyProfileViewController *)segue.destinationViewController logModel:myModel];
-            NSDictionary *userInfo = @{@"myProfileModel": myModel};
+    [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text completionBlock:^(NSDictionary *userInfo) {
+        if (userInfo) {
+            [self performSegueWithIdentifier:@"SignInToMyProfile" sender:self];
             NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
             [notificationCenter postNotificationName:@"SignInCompleted" object:self userInfo:userInfo];
-            NSLog(@"notification posted");
-        }];
-
-        //[(UserInformationViewController *)segue.destinationViewController setUserURL:user.userURL];
-    }
+        } else {
+            [self reEnterLoginPasswordAlert];
+        }
+    }];
 }
 
-
+- (void)reEnterLoginPasswordAlert {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Try again"
+                                          message:@"wrong Login or Password"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"OK action");
+                               }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 @end

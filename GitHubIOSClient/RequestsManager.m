@@ -80,25 +80,24 @@
     }];
 }
 
-// basic auth
-- (void)authUserWithLogin:(NSString *)login andPassword:(NSString *)password completionBlock:(void (^)(UserInformationModel *))completionBlock{
-    NSLog(@"login: %@, password: %@", login, password);
+- (void)authUserWithLogin:(NSString *)login andPassword:(NSString *)password completionBlock:(void (^)(NSDictionary *))completionBlock {
     [self setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [self.requestSerializer setAuthorizationHeaderFieldWithUsername:login password:password];
     self.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     NSURL *url = [NSURL URLWithString:@"https://api.github.com/user"];
     [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"AUTHED");
-        NSLog(@"response: %@", responseObject);
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             UserInformationModel *myModel = [MTLJSONAdapter modelOfClass:[UserInformationModel class] fromJSONDictionary:responseObject error:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
-                completionBlock(myModel);
+                NSDictionary *userInfo = @{@"myProfileModel": myModel};
+                completionBlock(userInfo);
             });
         });
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"%@", error);
+        completionBlock(nil);
     }];
+
 }
 
 @end

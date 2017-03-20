@@ -29,7 +29,6 @@
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
         //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Authors" image:[UIImage imageNamed:@"icon-authors"] tag:0];
     }
-    //NSLog(@"try to receive");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMyProfileModel:) name:@"SignInCompleted" object:nil];
 
     return self;
@@ -37,17 +36,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSLog(@"view did load");
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMyProfileModel:) name:@"SignInCompleted" object:nil];
     [self displayUserInformation];
 }
 
 - (void)receiveMyProfileModel:(NSNotification *)notification {
-    //NSLog(@"receive notification method");
     NSDictionary *userInfo = notification.userInfo;
     self.myProfileModel = [[UserInformationModel alloc] init];
     self.myProfileModel = userInfo[@"myProfileModel"];
-    //NSLog(@"my profile model: \n%@", self.myProfileModel);
 }
 
 - (void)displayUserInformation {
