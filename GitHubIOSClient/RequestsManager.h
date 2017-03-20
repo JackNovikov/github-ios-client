@@ -17,6 +17,6 @@
 - (void)getUsersListSinceNumber:(NSUInteger)number completionBlock:(void (^)(NSArray *))completionBlock;
 - (void)getUserInformation:(NSString *)userId completionBlock:(void (^)(UserInformationModel *))completionBlock;
 - (void)getUserRepositoriesList:(NSString *)reposURL forPage:(NSInteger)page completionBlock:(void (^)(NSArray *))completionBlock;
-- (void)authUserWithLogin:(NSString *)login andPassword:(NSString *)password;
+- (void)authUserWithLogin:(NSString *)login andPassword:(NSString *)password completionBlock:(void (^)(UserInformationModel *))completionBlock;
 
 @end

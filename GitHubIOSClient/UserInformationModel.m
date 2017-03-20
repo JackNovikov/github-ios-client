@@ -19,7 +19,10 @@
              @"login": @"login",
              @"repositoriesURL": @"repos_url",
              @"name": @"name",
-             @"publicRepos": @"public_repos"
+             @"publicRepos": @"public_repos",
+             @"privateGists":@"private_gists",
+             @"totalPrivateRepositories": @"total_private_repos",
+             @"ownedPrivateRepositories": @"owned_private_repos"
              };
 }
 

@@ -28,6 +28,18 @@
 
 @implementation UsersListViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        // set tab bar item
+        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:1];
+        //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Authors" image:[UIImage imageNamed:@"icon-authors"] tag:0];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"GitHub users"];

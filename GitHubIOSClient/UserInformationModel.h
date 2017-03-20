@@ -20,4 +20,9 @@
 @property (copy, nonatomic) NSNumber *followers;
 @property (copy, nonatomic) NSString *repositoriesURL;
 
+// in myProfile only
+@property (copy, nonatomic) NSNumber *privateGists;
+@property (copy, nonatomic) NSNumber *totalPrivateRepositories;
+@property (copy, nonatomic) NSNumber *ownedPrivateRepositories;
+
 @end

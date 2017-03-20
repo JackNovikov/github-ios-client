@@ -30,10 +30,6 @@
     [self requestUserInformation];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (void)requestUserInformation {
     RequestsManager *manager = [RequestsManager sharedRequestManager];
     [manager getUserInformation:self.userURL completionBlock:^(UserInformationModel *model) {

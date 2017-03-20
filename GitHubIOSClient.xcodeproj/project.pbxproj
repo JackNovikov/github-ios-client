@@ -12,6 +12,7 @@
 		52008D8F1E784A16000D1506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D8D1E784A16000D1506 /* Main.storyboard */; };
 		52008D911E784A17000D1506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52008D901E784A16000D1506 /* Assets.xcassets */; };
 		52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D921E784A17000D1506 /* LaunchScreen.storyboard */; };
+		5200C6AC1E7FC71B006CC61B /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */; };
 		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
 		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
 		5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5291E1B01E79D69E00C48365 /* libSDWebImage.a */; };
@@ -39,6 +40,8 @@
 		52008D901E784A16000D1506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52008D931E784A17000D1506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52008D951E784A17000D1506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5200C6AA1E7FC71B006CC61B /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
 		5291E1B01E79D69E00C48365 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
@@ -122,8 +125,6 @@
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
-				52F956FB1E7F5D5A00752F5C /* AuthorizationViewController.h */,
-				52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
 				52008D951E784A17000D1506 /* Info.plist */,
@@ -143,6 +144,10 @@
 		52A6D7F91E7B700C00DB6714 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52F956FB1E7F5D5A00752F5C /* AuthorizationViewController.h */,
+				52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */,
+				5200C6AA1E7FC71B006CC61B /* MyProfileViewController.h */,
+				5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */,
 				52D4E2041E79B143006CA04E /* UsersListViewController.h */,
 				52D4E2051E79B143006CA04E /* UsersListViewController.m */,
 				52D4E2071E79B8C9006CA04E /* UsersListTableViewCell.h */,
@@ -311,6 +316,7 @@
 			files = (
 				52008D891E784A16000D1506 /* AppDelegate.m in Sources */,
 				529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */,
+				5200C6AC1E7FC71B006CC61B /* MyProfileViewController.m in Sources */,
 				52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */,
 				52D4E2031E79B0D1006CA04E /* UserRepositoriesViewController.m in Sources */,
 				5293D9CD1E7A980E0030285A /* UserRepositoriesTableViewCell.m in Sources */,

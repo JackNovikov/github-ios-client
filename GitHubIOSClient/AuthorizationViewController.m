@@ -8,6 +8,7 @@
 
 #import "AuthorizationViewController.h"
 #import "RequestsManager.h"
+#import "MyProfileViewController.h"
 
 @interface AuthorizationViewController ()
 
@@ -22,17 +23,15 @@ static NSInteger OFFSET_FOR_KEYBOARD = 80.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)signInButtonClicked:(id)sender {
-    RequestsManager *manager = [RequestsManager sharedRequestManager];
-    [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text];
+-(void)dismissKeyboard
+{
+    [self.loginTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
@@ -44,17 +43,33 @@ static NSInteger OFFSET_FOR_KEYBOARD = 80.0;
     if (textField.text.length == 0) {
         textField.text = textField.placeholder;
     }
+    
     textField.placeholder = @"";
 }
 
-/*
-#pragma mark - Navigation
+/*- (IBAction)signInButtonClicked:(id)sender {
+    RequestsManager *manager = [RequestsManager sharedRequestManager];
+    [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text completionBlock:^(UserInformationModel *myModel) {
+        <#code#>
+    }];
+}*/
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"SignInToMyProfile"]) {
+        
+        RequestsManager *manager = [RequestsManager sharedRequestManager];
+        [manager authUserWithLogin:self.loginTextField.text andPassword:self.passwordTextField.text completionBlock:^(UserInformationModel *myModel) {
+            //[(MyProfileViewController *)segue.destinationViewController logModel:myModel];
+            NSDictionary *userInfo = @{@"myProfileModel": myModel};
+            NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+            [notificationCenter postNotificationName:@"SignInCompleted" object:self userInfo:userInfo];
+            NSLog(@"notification posted");
+        }];
+
+        //[(UserInformationViewController *)segue.destinationViewController setUserURL:user.userURL];
+    }
 }
-*/
+
+
 
 @end
