@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableArray *filteredUsers;
 @property BOOL isFiltered;
+@property NSInteger searchPage;
 
 @end
 
@@ -34,6 +35,7 @@
     if (self) {
         // set tab bar item
         self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:1];
+        [self.tabBarItem setTitle:@"ha-ha-ha"];
         //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Authors" image:[UIImage imageNamed:@"icon-authors"] tag:0];
     }
     return self;
@@ -46,10 +48,15 @@
     self.users = [[NSMutableArray alloc] init];
     self.searchBar.delegate = self;
     self.filteredUsers = self.users;
+    self.searchPage = 1;
 
     // pagination scroll
     [self.tableView addInfiniteScrollWithHandler:^(UITableView *tableView) {
-        [self requestUsersList];
+        if (self.isFiltered) {
+            [self searchBarSearchButtonClicked:self.searchBar];
+        } else {
+            [self requestUsersList];
+        }
     }];
     
     
@@ -58,7 +65,11 @@
     [self.tableView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    [self requestUsersList];
+    if (self.isFiltered) {
+        [self searchBarSearchButtonClicked:self.searchBar];
+    } else {
+        [self requestUsersList];
+    }
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)text {
@@ -67,6 +78,7 @@
         self.isFiltered = FALSE;
         searchBar.showsCancelButton = NO;
         [self performSelector:@selector(hideKeyboardWithSearhButton:) withObject:searchBar afterDelay:0];
+        [self refreshTable];
     } else {
         self.isFiltered = true;
         self.filteredUsers = [[NSMutableArray alloc] init];
@@ -90,11 +102,33 @@
     searchBar.showsCancelButton = NO;
 }
 
+// display users according to search term
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    RequestsManager *manager = [RequestsManager sharedRequestManager];
+    [manager getUsersListForSearchTerm:searchBar.text forPage:self.searchPage completionBlock:^(NSArray *searchedUsers) {
+        if (self.searchPage == 1) {
+            [self.filteredUsers removeAllObjects];
+        }
+        [self.filteredUsers addObjectsFromArray:searchedUsers];
+        self.isFiltered = true;
+        self.searchPage++;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+        [self.tableView finishInfiniteScroll];
+    }];
+}
+
 // pull to refresh
 - (void) refreshTable {
     [self.users removeAllObjects];
+    [self.filteredUsers removeAllObjects];
     [self.tableView reloadData];
-    [self requestUsersList];
+    if (self.isFiltered) {
+        self.searchPage = 1;
+        [self searchBarSearchButtonClicked:self.searchBar];
+    } else {
+        [self requestUsersList];
+    }
 }
 
 - (void)requestUsersList {

@@ -15,6 +15,7 @@
 		5200C6AC1E7FC71B006CC61B /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */; };
 		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
 		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
+		5273395B1E808FFB00894C3E /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5273395A1E808FFB00894C3E /* libMagicalRecord.a */; };
 		5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5291E1B01E79D69E00C48365 /* libSDWebImage.a */; };
 		5293D9CD1E7A980E0030285A /* UserRepositoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5293D9CC1E7A980E0030285A /* UserRepositoriesTableViewCell.m */; };
 		529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 529CAC121E79748100ECCB88 /* UserInformationModel.m */; };
@@ -44,6 +45,7 @@
 		5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
 		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
+		5273395A1E808FFB00894C3E /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/MagicalRecord/libMagicalRecord.a"; sourceTree = "<group>"; };
 		5291E1B01E79D69E00C48365 /* libSDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSDWebImage.a; path = "Pods/../build/Debug-iphoneos/SDWebImage/libSDWebImage.a"; sourceTree = "<group>"; };
 		5293D9CB1E7A980E0030285A /* UserRepositoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRepositoriesTableViewCell.h; sourceTree = "<group>"; };
 		5293D9CC1E7A980E0030285A /* UserRepositoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRepositoriesTableViewCell.m; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5273395B1E808FFB00894C3E /* libMagicalRecord.a in Frameworks */,
 				52D115021E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a in Frameworks */,
 				5291E1B11E79D69E00C48365 /* libSDWebImage.a in Frameworks */,
 				52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */,
@@ -89,6 +92,7 @@
 		4E603A588B3D8A7A04031138 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5273395A1E808FFB00894C3E /* libMagicalRecord.a */,
 				52D115011E7ABEFE0020A483 /* libUIScrollView-InfiniteScroll.a */,
 				5291E1B01E79D69E00C48365 /* libSDWebImage.a */,
 				52518ACD1E78BECC00E8264D /* libMantle.a */,
@@ -445,6 +449,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UIScrollView-InfiniteScroll",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MagicalRecord",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +469,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Mantle",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SDWebImage",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/UIScrollView-InfiniteScroll",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/MagicalRecord",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TeffieHome.GitHubIOSClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";

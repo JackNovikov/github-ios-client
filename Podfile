@@ -7,5 +7,6 @@ target 'GitHubIOSClient' do
   pod 'Mantle'
   pod 'SDWebImage', '~>3.8'
   pod 'UIScrollView-InfiniteScroll', '~> 1.0.0'
+  pod 'MagicalRecord'
 
 end

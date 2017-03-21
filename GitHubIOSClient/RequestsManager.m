@@ -42,6 +42,28 @@
     }];
 }
 
+// returns in compeletion block NSMutableArray with UserCellModel for search term
+- (void)getUsersListForSearchTerm:(NSString *)term forPage:(NSInteger)page completionBlock:(void (^)(NSArray *))completionBlock {
+    NSString *requestURL = [NSString stringWithFormat:@"https://api.github.com/search/users?q=%@&page=%ld", term, (long)page];
+    NSURL *url = [NSURL URLWithString:requestURL];
+    NSMutableArray *usersList = [[NSMutableArray alloc] init];
+    
+    [self GET:url.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray *users = responseObject[@"items"];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            for (NSDictionary *tempUser in users) {
+                UserCellModel *user = [MTLJSONAdapter modelOfClass:[UserCellModel class] fromJSONDictionary:tempUser error:nil];
+                [usersList addObject:user];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completionBlock(usersList);
+            });
+        });
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+}
+
 // returns in compeletion block UserInformationModel by the user id
 - (void)getUserInformation:(NSString *)userURL completionBlock:(void (^)(UserInformationModel *))completionBlock {
     NSURL *url = [NSURL URLWithString:userURL];

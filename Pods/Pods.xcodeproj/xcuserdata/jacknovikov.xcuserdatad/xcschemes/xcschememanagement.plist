@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>33A34048CB9AA5032BC643E8DD4A5EB9</key>
+		<key>132A0DE843473196AF4D52F5B36734E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>443474B4E51941129EE3070779D89F3E</key>
+		<key>417EA9844EC286C5B1B8FCB029C00130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77AEE79EC13D57B159E89439609809EA</key>
+		<key>80F76C8A1ACA9BD35D2E17F6B381FF61</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -53,6 +58,11 @@
 			<true/>
 		</dict>
 		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F49F3448553B6837F3EE7D9DEEB123D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
