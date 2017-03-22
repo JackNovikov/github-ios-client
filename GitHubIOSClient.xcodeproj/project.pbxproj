@@ -13,6 +13,8 @@
 		52008D911E784A17000D1506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52008D901E784A16000D1506 /* Assets.xcassets */; };
 		52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52008D921E784A17000D1506 /* LaunchScreen.storyboard */; };
 		5200C6AC1E7FC71B006CC61B /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */; };
+		5204F4C01E81C12800E7A58A /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5204F4BE1E81C12800E7A58A /* CoreDataModel.xcdatamodeld */; };
+		5204F4C31E81C1AB00E7A58A /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5204F4C21E81C1AB00E7A58A /* DataManager.m */; };
 		52518ACC1E78BEC700E8264D /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACB1E78BEC700E8264D /* libAFNetworking.a */; };
 		52518ACE1E78BECC00E8264D /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52518ACD1E78BECC00E8264D /* libMantle.a */; };
 		5273395B1E808FFB00894C3E /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5273395A1E808FFB00894C3E /* libMagicalRecord.a */; };
@@ -25,6 +27,10 @@
 		52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2051E79B143006CA04E /* UsersListViewController.m */; };
 		52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */; };
 		52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D63D8B1E78C15B00BAB343 /* RequestsManager.m */; };
+		52F125641E8274850018C7DA /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F125631E8274850018C7DA /* users.png */; };
+		52F125661E8274CF0018C7DA /* users@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F125651E8274CF0018C7DA /* users@2x.png */; };
+		52F1256C1E82778F0018C7DA /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F1256B1E82778F0018C7DA /* profile.png */; };
+		52F1256E1E8278170018C7DA /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F1256D1E8278170018C7DA /* profile@2x.png */; };
 		52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */; };
 		52F956FD1E7F5D5B00752F5C /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F956FC1E7F5D5A00752F5C /* AuthorizationViewController.m */; };
 		52F9F2441E79FA5E0049B526 /* UserCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F9F2431E79FA5E0049B526 /* UserCellModel.m */; };
@@ -43,6 +49,9 @@
 		52008D951E784A17000D1506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5200C6AA1E7FC71B006CC61B /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		5200C6AB1E7FC71B006CC61B /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		5204F4BF1E81C12800E7A58A /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5204F4C11E81C1AB00E7A58A /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		5204F4C21E81C1AB00E7A58A /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		52518ACB1E78BEC700E8264D /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/AFNetworking/libAFNetworking.a"; sourceTree = "<group>"; };
 		52518ACD1E78BECC00E8264D /* libMantle.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMantle.a; path = "Pods/../build/Debug-iphoneos/Mantle/libMantle.a"; sourceTree = "<group>"; };
 		5273395A1E808FFB00894C3E /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "Pods/../build/Debug-iphoneos/MagicalRecord/libMagicalRecord.a"; sourceTree = "<group>"; };
@@ -62,6 +71,10 @@
 		52D4E2081E79B8C9006CA04E /* UsersListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListTableViewCell.m; sourceTree = "<group>"; };
 		52D63D8A1E78C15B00BAB343 /* RequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestsManager.h; sourceTree = "<group>"; };
 		52D63D8B1E78C15B00BAB343 /* RequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestsManager.m; sourceTree = "<group>"; };
+		52F125631E8274850018C7DA /* users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = users.png; sourceTree = "<group>"; };
+		52F125651E8274CF0018C7DA /* users@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "users@2x.png"; sourceTree = "<group>"; };
+		52F1256B1E82778F0018C7DA /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		52F1256D1E8278170018C7DA /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
 		52F12F011E78B9A800FDCBC1 /* UserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationViewController.h; sourceTree = "<group>"; };
 		52F12F021E78B9A800FDCBC1 /* UserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationViewController.m; sourceTree = "<group>"; };
 		52F956FB1E7F5D5A00752F5C /* AuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationViewController.h; sourceTree = "<group>"; };
@@ -123,11 +136,13 @@
 		52008D831E784A16000D1506 /* GitHubIOSClient */ = {
 			isa = PBXGroup;
 			children = (
+				52F125561E826FF70018C7DA /* Resources */,
 				52A6D7F91E7B700C00DB6714 /* ViewControllers */,
 				52A6D7FC1E7B703F00DB6714 /* Models */,
 				52A6D7FB1E7B703400DB6714 /* Services */,
 				52008D871E784A16000D1506 /* AppDelegate.h */,
 				52008D881E784A16000D1506 /* AppDelegate.m */,
+				5204F4BE1E81C12800E7A58A /* CoreDataModel.xcdatamodeld */,
 				52008D8D1E784A16000D1506 /* Main.storyboard */,
 				52008D901E784A16000D1506 /* Assets.xcassets */,
 				52008D921E784A17000D1506 /* LaunchScreen.storyboard */,
@@ -171,6 +186,8 @@
 			children = (
 				52D63D8A1E78C15B00BAB343 /* RequestsManager.h */,
 				52D63D8B1E78C15B00BAB343 /* RequestsManager.m */,
+				5204F4C11E81C1AB00E7A58A /* DataManager.h */,
+				5204F4C21E81C1AB00E7A58A /* DataManager.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -186,6 +203,17 @@
 				529CAC151E797A8900ECCB88 /* RepositoryModel.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		52F125561E826FF70018C7DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52F125631E8274850018C7DA /* users.png */,
+				52F125651E8274CF0018C7DA /* users@2x.png */,
+				52F1256B1E82778F0018C7DA /* profile.png */,
+				52F1256D1E8278170018C7DA /* profile@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C68B844040269C8D7051FCBC /* Pods */ = {
@@ -257,9 +285,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F1256C1E82778F0018C7DA /* profile.png in Resources */,
 				52008D941E784A17000D1506 /* LaunchScreen.storyboard in Resources */,
 				52008D911E784A17000D1506 /* Assets.xcassets in Resources */,
+				52F1256E1E8278170018C7DA /* profile@2x.png in Resources */,
 				52008D8F1E784A16000D1506 /* Main.storyboard in Resources */,
+				52F125661E8274CF0018C7DA /* users@2x.png in Resources */,
+				52F125641E8274850018C7DA /* users.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52008D891E784A16000D1506 /* AppDelegate.m in Sources */,
+				5204F4C31E81C1AB00E7A58A /* DataManager.m in Sources */,
 				529CAC131E79748100ECCB88 /* UserInformationModel.m in Sources */,
 				5200C6AC1E7FC71B006CC61B /* MyProfileViewController.m in Sources */,
 				52D4E2091E79B8C9006CA04E /* UsersListTableViewCell.m in Sources */,
@@ -330,6 +363,7 @@
 				52F956FD1E7F5D5B00752F5C /* AuthorizationViewController.m in Sources */,
 				52F12F031E78B9A800FDCBC1 /* UserInformationViewController.m in Sources */,
 				52D63D8C1E78C15B00BAB343 /* RequestsManager.m in Sources */,
+				5204F4C01E81C12800E7A58A /* CoreDataModel.xcdatamodeld in Sources */,
 				52D4E2061E79B143006CA04E /* UsersListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +532,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5204F4BE1E81C12800E7A58A /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5204F4BF1E81C12800E7A58A /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 5204F4BF1E81C12800E7A58A /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52008D791E784A16000D1506 /* Project object */;
 }

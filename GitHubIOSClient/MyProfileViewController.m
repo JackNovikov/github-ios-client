@@ -26,8 +26,7 @@
     
     if (self) {
         // set tab bar item
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
-        //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Authors" image:[UIImage imageNamed:@"icon-authors"] tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"My Profile" image:[UIImage imageNamed:@"profile"] tag:0];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveMyProfileModel:) name:@"SignInCompleted" object:nil];
 

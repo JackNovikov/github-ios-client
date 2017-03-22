@@ -19,7 +19,7 @@
 
 @implementation AuthorizationViewController
 
-static NSInteger OFFSET_FOR_KEYBOARD = 80.0;
+//static NSInteger OFFSET_FOR_KEYBOARD = 80.0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

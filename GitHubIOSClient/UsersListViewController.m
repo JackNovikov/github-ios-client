@@ -13,6 +13,7 @@
 #import "UserInformationViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <UIScrollView-InfiniteScroll/UIScrollView+InfiniteScroll.h>
+#import "DataManager.h"
 
 @interface UsersListViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableArray *filteredUsers;
 @property BOOL isFiltered;
+@property BOOL couldChangeDataBase;
 @property NSInteger searchPage;
 
 @end
@@ -34,9 +36,8 @@
     
     if (self) {
         // set tab bar item
-        self.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:1];
-        [self.tabBarItem setTitle:@"ha-ha-ha"];
-        //self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Authors" image:[UIImage imageNamed:@"icon-authors"] tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Users" image:[UIImage imageNamed:@"users"] tag:0];
+
     }
     return self;
 }
@@ -55,7 +56,17 @@
         if (self.isFiltered) {
             [self searchBarSearchButtonClicked:self.searchBar];
         } else {
-            [self requestUsersList];
+            if (self.couldChangeDataBase) {
+                [self requestUsersList];
+            }
+        }
+    }];
+    [self.tableView setShouldShowInfiniteScrollHandler:^BOOL(UITableView *tableView) {
+        if (!self.isFiltered && !self.couldChangeDataBase) {
+            [self shouldPullToRefreshAlert];
+            return NO;
+        } else {
+            return YES;
         }
     }];
     
@@ -68,19 +79,41 @@
     if (self.isFiltered) {
         [self searchBarSearchButtonClicked:self.searchBar];
     } else {
-        [self requestUsersList];
+        //[self requestUsersList];
+        DataManager *manager = [DataManager sharedDataManager];
+        [self.users addObjectsFromArray:[manager getUsersFromDataBase]];
+        self.couldChangeDataBase = NO;
+        [self.tableView reloadData];
     }
+}
+
+- (void)shouldPullToRefreshAlert {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Update"
+                                          message:@"pull down the table to refresh the data"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"OK action");
+                               }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)text {
     searchBar.showsCancelButton = YES;
     if (text.length == 0) {
-        self.isFiltered = FALSE;
+        self.couldChangeDataBase = NO;
+        self.isFiltered = NO;
         searchBar.showsCancelButton = NO;
         [self performSelector:@selector(hideKeyboardWithSearhButton:) withObject:searchBar afterDelay:0];
         [self refreshTable];
     } else {
-        self.isFiltered = true;
+        self.couldChangeDataBase = YES;
+        self.isFiltered = YES;
         self.filteredUsers = [[NSMutableArray alloc] init];
         
         for (UserCellModel *model in self.users) {
@@ -122,6 +155,9 @@
 - (void) refreshTable {
     [self.users removeAllObjects];
     [self.filteredUsers removeAllObjects];
+    DataManager *manager = [DataManager sharedDataManager];
+    [manager clearUsersDataBase];
+    self.couldChangeDataBase = YES;
     [self.tableView reloadData];
     if (self.isFiltered) {
         self.searchPage = 1;
@@ -175,6 +211,10 @@
     
     [cell.avatarImage sd_setImageWithURL:[NSURL URLWithString:user.avatarURL]];
     cell.name.text = user.login;
+    if (self.couldChangeDataBase) {
+        DataManager *dataManager = [DataManager sharedDataManager];
+        [dataManager addUserToDataBase:user];
+    }
     
     return cell;
 }
